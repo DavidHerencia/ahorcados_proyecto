@@ -12,6 +12,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+
 @dataclass
 class Lobby(db.Model):
     id: int
@@ -27,6 +28,8 @@ class Lobby(db.Model):
     def __repr__(self):
         return f'<lobby {self.id}>'
 
+
+# routes
 @app.route('/lobby', methods=['GET', 'POST'])
 def route_lobby():
     if request.method == 'GET':
@@ -40,6 +43,7 @@ def route_lobby_id(id):
         return get_lobby_id(id)
     elif request.method == 'DELETE':
         return delete_lobby(id)
+
 
 
 def get_lobby():
@@ -65,4 +69,8 @@ def delete_lobby(id):
     lobby.active = False
     db.session.commit()
     return 'SUCCESS'
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8000, debug=True)
 

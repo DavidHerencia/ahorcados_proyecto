@@ -1,0 +1,20 @@
+version: "3.3"
+
+services:
+  player:
+    build: ./player
+    ports:
+      - 8000:8000
+  lobby:
+    build: ./lobby
+    ports:
+      - 8001:8000
+  game:
+    build: ./game
+    ports:
+      - 8002:8000
+  word:
+    build: ./word
+    ports:
+      - 8003:8000
+

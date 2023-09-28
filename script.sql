@@ -1,0 +1,43 @@
+CREATE DATABASE ahorcados;
+USE ahorcados;
+
+CREATE TABLE Player (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(20) NOT NULL UNIQUE,
+    password VARCHAR(20) NOT NULL,
+    logged_in BOOLEAN NOT NULL DEFAULT FALSE,
+    wins INT NOT NULL DEFAULT 0,
+    defeats INT NOT NULL DEFAULT 0,
+    ties INT NOT NULL DEFAULT 0
+);
+
+CREATE TABLE Lobby (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL UNIQUE,
+    player_id INT NOT NULL,
+    active BOOLEAN NOT NULL DEFAULT TRUE,
+    FOREIGN KEY (player_id) REFERENCES Player(id)
+);
+
+CREATE TABLE Word (
+    word VARCHAR(20) PRIMARY KEY,
+    length INT NOT NULL DEFAULT 0
+);
+
+CREATE TABLE Game (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    player1_id INT NOT NULL,
+    player2_id INT NOT NULL,
+    word1 VARCHAR(20) NOT NULL,
+    word2 VARCHAR(20) NOT NULL,
+    lives1 INT NOT NULL DEFAULT 6,
+    lives2 INT NOT NULL DEFAULT 6,
+    guesses1 VARCHAR(20) NOT NULL DEFAULT '',
+    guesses2 VARCHAR(20) NOT NULL DEFAULT '',
+    outcome INT NOT NULL DEFAULT 0,
+    date VARCHAR(20) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (player1_id) REFERENCES Player(id),
+    FOREIGN KEY (player2_id) REFERENCES Player(id),
+    FOREIGN KEY (word1) REFERENCES Word(word),
+    FOREIGN KEY (word2) REFERENCES Word(word)
+);
