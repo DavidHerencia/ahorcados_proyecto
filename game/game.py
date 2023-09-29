@@ -9,7 +9,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://admin:Co7LUH7WtFeL8FaAcA5B@db-parcial.crxiuk7halti.us-east-1.rds.amazonaws.com:3306/ahorcados'  #TO CHANGE
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://admin:Co7LUH7WtFeL8FaAcA5B@db-parcial.crxiuk7halti.us-east-1.rds.amazonaws.com:3306/ahorcados'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)

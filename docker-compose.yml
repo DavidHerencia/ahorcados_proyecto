@@ -4,17 +4,17 @@ services:
   player:
     build: ./player
     ports:
-      - 8000:8000
+      - 5000:5000
   lobby:
     build: ./lobby
     ports:
-      - 8001:8000
+      - 5001:5000
   game:
     build: ./game
     ports:
-      - 8002:8000
+      - 5002:5000
   word:
     build: ./word
     ports:
-      - 8003:8000
+      - 5003:5000
 
