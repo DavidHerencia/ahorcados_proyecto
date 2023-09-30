@@ -1,6 +1,7 @@
 import React from 'react';
 import Typografy from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import loadbalancer from './config';
 
 export const About = () => {
     return (

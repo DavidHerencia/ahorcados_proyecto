@@ -5,6 +5,7 @@ import Typografy from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import HowToRegOutlinedIcon from '@mui/icons-material/HowToRegOutlined';
 import { Link } from 'react-router-dom';
+import loadbalancer from './config';
 
 export const Register = () => {
     //comprueba si hay una sssion iniciada

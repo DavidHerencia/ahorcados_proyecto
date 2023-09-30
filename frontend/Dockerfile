@@ -4,4 +4,4 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
-CMD ["npx", "serve", "-s", "build", "-l", "3000"]
+CMD ["npx", "serve", "-s", "build"]

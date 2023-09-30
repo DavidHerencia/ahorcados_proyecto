@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { AlphabetButtonArray } from "./AlphabetButtons";
 import { Word } from "./Word";
+import loadbalancer from './config';
 
 // todo:
 // 1. get the word, guesses, and lives from the server, based on the game id and player id

@@ -5,6 +5,7 @@ import Typografy from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import { Link } from 'react-router-dom';
+import loadbalancer from './config';
 
 
 export const Login = () => {

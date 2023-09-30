@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Typografy from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
+import loadbalancer from './config';
 
 export const Home = () => {
 

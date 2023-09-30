@@ -1,4 +1,5 @@
 import React from "react";
+import loadbalancer from './config';
 
 export const Word = (props) => {
   const wordArray = props.wordArray;
