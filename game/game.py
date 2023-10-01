@@ -15,6 +15,41 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 CORS(app)
 
+
+@dataclass
+class Player(db.Model):
+    id: int
+    username: str
+    password: str
+    logged_in: bool
+    wins: int
+    defeats: int
+    ties: int
+
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    password = db.Column(db.String(20), nullable=False)
+    logged_in = db.Column(db.Boolean, nullable=False, default=False)
+    wins = db.Column(db.Integer, nullable=False, default=0)
+    defeats = db.Column(db.Integer, nullable=False, default=0)
+    ties = db.Column(db.Integer, nullable=False, default=0)
+
+    def __repr__(self):
+        return f'<player {self.username}>'
+
+
+@dataclass
+class Word(db.Model):
+    word: str
+    length: int
+
+    word = db.Column(db.String(20), primary_key=True)
+    length = db.Column(db.Integer, nullable=False, default=0)
+
+    def __repr__(self):
+        return f'<word {self.word}>'
+
+
 @dataclass
 class Game(db.Model):
     id: int

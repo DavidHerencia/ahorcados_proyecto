@@ -13,6 +13,28 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 CORS(app)
 
+
+@dataclass
+class Player(db.Model):
+    id: int
+    username: str
+    password: str
+    logged_in: bool
+    wins: int
+    defeats: int
+    ties: int
+
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    password = db.Column(db.String(20), nullable=False)
+    logged_in = db.Column(db.Boolean, nullable=False, default=False)
+    wins = db.Column(db.Integer, nullable=False, default=0)
+    defeats = db.Column(db.Integer, nullable=False, default=0)
+    ties = db.Column(db.Integer, nullable=False, default=0)
+
+    def __repr__(self):
+        return f'<player {self.username}>'
+
 @dataclass
 class Lobby(db.Model):
     id: int
@@ -56,7 +78,7 @@ def post_lobby():
     lobby = Lobby(name=json['name'], player_id=json['player_id'])
     db.session.add(lobby)
     db.session.commit()
-    return jsonify(lobby)
+    return {'id': lobby.id}
 
 
 def get_lobby_id(id):
