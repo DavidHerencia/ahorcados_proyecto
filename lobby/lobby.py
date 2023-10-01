@@ -56,7 +56,7 @@ def post_lobby():
     lobby = Lobby(name=json['name'], player_id=json['player_id'])
     db.session.add(lobby)
     db.session.commit()
-    return {'id': lobby.id}
+    return jsonify(lobby)
 
 
 def get_lobby_id(id):
