@@ -11,7 +11,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://admin:Co7LUH7WtFeL8FaAcA5B@db-p
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
-
+CORS(app)
 
 @dataclass
 class Lobby(db.Model):
