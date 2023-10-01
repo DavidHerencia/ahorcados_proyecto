@@ -1,5 +1,5 @@
 FROM python:3-slim
-ENV FLASK_APP=game.py
+ENV FLASK_APP=player.py
 ENV FLASK_ENV=production
 ENV FLASK_DEBUG=0
 WORKDIR /app
