@@ -9,5 +9,5 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 RUN pip3 install --no-cache-dir flask sqlalchemy flask_sqlalchemy flask-cors
 COPY . .
-CMD [ "flask", "run", "--host:0.0.0.0"]
+CMD [ "flask", "run", "--host=0.0.0.0"]
 
