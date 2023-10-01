@@ -9,7 +9,6 @@ import { About } from './components/About';
 import { Rules } from './components/Rules';
 import { Game } from './components/Game';
 import { WaitingRoom } from './components/WaitingRoom';
-import { LeaderBoard } from './components/LeaderBoard';
 import { Navbar } from './components/Navbar';
 import './App.css'; 
 
@@ -44,7 +43,6 @@ function App() {
           <Route path="/joinlobby" Component={JoinLobby}/>
           <Route path="/about" Component={About}/>
           <Route path="/rules" Component={Rules}/>          
-          <Route path="/leaderboard" Component={LeaderBoard}/>
           <Route path="/waiting/:id" Component={WaitingRoom}/>
           <Route path="/game/:id" Component={Game}/>
         </Routes>

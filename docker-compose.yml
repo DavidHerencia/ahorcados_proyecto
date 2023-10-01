@@ -17,4 +17,7 @@ services:
     build: ./word
     ports:
       - 5003:5000
-
+  frontend:
+    build: ./frontend
+    ports: 
+      - 3000:3000

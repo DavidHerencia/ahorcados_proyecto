@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import loadbalancer from './config';
 
 function BurguerButton(props) {
   return (
@@ -25,7 +24,7 @@ const Burguer = styled.div`
   height: 30px;
   margin: 10px 10px;
   position: relative;
-  cursor: pointer;
+  cursor:localhos pointer;
   display: inline-block;
 }
 .nav-icon-5 span{

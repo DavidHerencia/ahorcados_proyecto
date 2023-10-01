@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Typografy from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-import loadbalancer from './config';
 
 export const Home = () => {
 
@@ -78,20 +77,6 @@ export const Home = () => {
                         }}>
                         Join Lobby
                     </Button>
-                </Grid>
-
-                <Grid item xs={12} sm={6}>
-                    <Link to="/leaderboard"
-                        style={{
-                            textDecoration: 'none',
-                        }}>
-                        <Button variant="contained" 
-                            sx={{ borderRadius: 3, 
-                            backgroundColor: '#212F3C', 
-                            width: '100%' }}>
-                            Leaderboard
-                        </Button>
-                    </Link>
                 </Grid>
 
             </Grid>

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import BurguerButton from './BurguerButton'
 import {Link} from 'react-router-dom'
-import loadbalancer from './config';
 
 
 export const Navbar = () => {
