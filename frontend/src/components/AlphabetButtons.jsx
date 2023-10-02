@@ -11,7 +11,7 @@ export const AlphabetButtonArray = (props) => {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   const handleLetterClick = async (letter) => {
-    const response = await fetch(`${loadbalancer}:5002/${id}`);
+    const response = await fetch(`${loadbalancer}:5002/game/${id}`);
     const gameData = await response.json();
 
     let label = "";
